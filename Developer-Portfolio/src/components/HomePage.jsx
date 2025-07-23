@@ -4,6 +4,12 @@ import { useState, useRef } from 'react';
 import CalorieCounterModal from './CalorieCounterModal';
 import Subject from '../assets/Subject.png';
 import { IoMdArrowRoundForward } from "react-icons/io";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
+
+
+
 
 
 
@@ -47,24 +53,40 @@ const HomePage = () => {
                                     <div className="grid grid-cols-2 gap-10 mx-auto p-4 mr-20 ml-10">
 
                                           <div className ="grid-cols-1">
-                                                <h2 className='text-xl mt-40'> About Me! </h2>
+                                                <h2 className='text-xl mt-35'> About Me! </h2>
                                                 <p className='text-lg font-light mt-2'>
                                                       I am a software engineer with a background in full-stack development. I enjoy building web applications, exploring new technologies, and applying my learning. I've learned various languages through LaunchCode, CS courses, and college. I thrive in collaborative environments and am always eager to learn and grow in the tech industry.
-                                                      <a className='ml-2 inline-flex items-center hover:underline'> Learn More <IoMdArrowRoundForward /> </a>
+                                                      <a className='ml-2 inline-flex items-center hover:underline hover:cursor-pointer'> Learn More <IoMdArrowRoundForward /> </a>
                                                 </p>
 
                                           </div>
 
                                           <div className='grid-cols-2'>
                                                 
-                                                <h2 className='text-xl mt-40'> About Me! </h2>
+                                                <h2 className='text-xl mt-35'> My Work </h2>
                                                 <p className='text-lg font-light mt-2'>
-                                                      I am a software engineer with a background in full-stack development. I enjoy building web applications, exploring new technologies, and applying my learning. I've learned various languages through LaunchCode, CS courses, and college. I thrive in collaborative environments and am always eager to learn and grow in the tech industry.
+                                                      I've worked in various industries, including retail, food service, real estate, health care, and brokerage. My experience has taught me the importance of adaptability and continuous learning. I enjoy using technology to solve real-world problems and improve user experiences.
                                                       <a className='ml-2 inline-flex items-center hover:underline'> Learn More <IoMdArrowRoundForward /> </a>
                                                 </p>
 
                                           </div>
 
+                                    </div>
+
+
+                                    <div className='flex justify-center items-center mt-20 gap-10'>
+                                          <a href="https://github.com/SeanEArc" target="_blank" rel="noopener noreferrer">
+                                                <FaGithub size="3em" className="hover:text-gray-500 transform hover:scale-110 transition duration-300"/>
+                                          </a>
+
+                                          <a href="https://www.linkedin.com/in/sean-emmanuel-arcaya/" target="_blank" rel="noopener noreferrer">
+                                                <FaLinkedin size="3em" className='hover:text-gray-500 transform hover:scale-110 transition duration-300' />
+                                          </a> 
+
+                                          <a href="https://www.instagram.com/sean.arcaya/" target="_blank" rel="noopener noreferrer"> 
+                                                <FaInstagram size="3em" className='hover:text-gray-500 transform hover:scale-110 transition duration-300' />
+                                          </a>
+                                          
                                     </div>
 
                               </div>

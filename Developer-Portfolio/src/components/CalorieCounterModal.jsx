@@ -7,9 +7,6 @@ import { MdExitToApp } from "react-icons/md";
 
 const CalorieCounterModal = ({ onClose }) => {
 
-
-
-
 	const modalRef = useRef();
 
 	// Closes AddFoodModal if clicked outside of the AddFoodModal
@@ -47,13 +44,21 @@ const CalorieCounterModal = ({ onClose }) => {
                         information on how to calculate your daily caloric intake.
                   </p>
 
-                  <div className='flex justify-center m-2 mx-auto w-[20%] h-15'>
+                  <div className='flex justify-center m-2 mx-auto w-[40%] h-15'>
 
                         <a href="https://thebestcalorietracker.netlify.app/" 
-                        className='w-full h-full flex items-center justify-center text-center bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors duration-300' 
+                        className='w-full h-full flex items-center justify-center text-center bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors duration-300 mr-5' 
                         target="_blank" rel="noopener noreferrer">
-                        Wanna try it out? Click Here!
+                        Deplayed Front-End Only
                         </a>
+
+                        <a href="https://github.com/SeanEArc/Unit-2-Final-Project" 
+                        className='w-full h-full flex items-center justify-center text-center bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors duration-300 ml-5' 
+                        target="_blank" rel="noopener noreferrer">
+                        Github Full-Stack Application
+                        </a>
+
+                        
 
                   </div>
 

@@ -16,26 +16,25 @@ const Navbar = () => {
 
                               {hamburgerOpen && (
                               <div className="grid grid-cols-1 md:grid-cols-5 gap-4 p-4">
-                                    <p className="top-title-link flex-auto w-full text-2xl text-center font-bold pt-2 pb-2"> 
+                                    <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2"> 
                                           Home
                                     </p>
 
-                                    <p className="top-title-link flex-auto w-full text-2xl text-center font-bold pt-2 pb-2"> 
+                                    <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2"> 
                                           About Me
                                     </p>
 
-                                    <p className="top-title-link flex-auto w-full text-2xl text-center font-bold pt-2 pb-2"> 
+                                    <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2"> 
                                           My Career
                                     </p>
 
-                                    <p className="top-title-link flex-auto w-full text-2xl text-center font-bold pt-2 pb-2"> 
+                                    <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2"> 
                                           Resume
                                     </p>
 
-                                    <p className="top-title-link flex-auto w-full text-2xl text-center font-bold pt-2 pb-2"> 
+                                    <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2"> 
                                           Socials + Contact
                                     </p>
-
 
                               </div>)}
                         </div>

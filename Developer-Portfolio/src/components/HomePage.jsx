@@ -4,12 +4,8 @@ import { useState, useRef } from 'react';
 import CalorieCounterModal from './CalorieCounterModal';
 import Subject from '../assets/Subject.png';
 import { IoMdArrowRoundForward } from "react-icons/io";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
-
-
-
 
 
 

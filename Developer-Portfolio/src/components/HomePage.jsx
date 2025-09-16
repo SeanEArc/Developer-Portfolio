@@ -20,13 +20,13 @@ const HomePage = () => {
 
       return (
 
-            <div>
+            <div className='bg-[#2d2d30]'>
                   
-                  <div className="bg-[#1e1e1e] bg-no-repeat bg-contain bg-center p-4 text-neutral-200 shadow-3xl h-200"
+                  <div className="bg-[#1e1e1e] bg-no-repeat bg-contain bg-center text-neutral-200 shadow-3xl h-210"
                   style={{ 
                         backgroundImage: `url(${Subject})`,
-                        backgroundPosition: '80% 25px',
-                        backgroundSize: '25%',
+                        backgroundPosition: '87% 25px',
+                        backgroundSize: '26%',
                         }}>
                         
                         <div className="grid grid-cols-[60%_40%] w-full font-bold text-white">
@@ -89,15 +89,15 @@ const HomePage = () => {
 
                         </div>
 
-                        <div className='flex justify-center animate-bounce mt-5'> 
+                        <div className='flex justify-center animate-bounce mt-10'> 
                               <IoIosArrowDown size="3em" className='text-gray-600'/>
                         </div>
 
                   </div>
 
+                  <hr className='w-full shadow-2xl'/>
 
-
-                  <div className='bg-[#2d2d30] text-zinc-300 pt-4 shadow-lg'>
+                  <div className='bg-[#2d2d30] text-zinc-300 pt-4'>
 
 
                         {/* TECHNICAL SKILLS*/}
@@ -132,7 +132,7 @@ const HomePage = () => {
                         {/* ABOUT ME SECTION*/}
 
                         <div className="p-4 w-[60%] mx-auto">
-                              <h2 className="text-3xl font-bold m-2">About Me </h2>
+                              <h2 className="text-3xl font-bold m-2"> About Me </h2>
 
                               <p>
                                     I am a passionate software engineer with a background in full-stack development. I enjoy building scalable web applications and exploring new technologies. My expertise includes JavaScript, React, Node.js, and more. I thrive in collaborative environments and am always eager to learn and grow in the tech industry.

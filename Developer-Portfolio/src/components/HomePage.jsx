@@ -3,7 +3,7 @@ import calorieCalculatorSS from '../assets/CalorieCalculatorScreenshot.png';
 import { useState, useRef } from 'react';
 import CalorieCounterModal from './CalorieCounterModal';
 import Subject from '../assets/Subject.png';
-import { IoMdArrowRoundForward } from "react-icons/io";
+import { IoMdArrowRoundForward, IoIosArrowDown } from "react-icons/io";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 
@@ -22,10 +22,10 @@ const HomePage = () => {
 
             <div>
                   
-                  <div className="bg-[#1e1e1e] bg-no-repeat bg-contain bg-center p-4 text-neutral-200 shadow-3xl h-225"
+                  <div className="bg-[#1e1e1e] bg-no-repeat bg-contain bg-center p-4 text-neutral-200 shadow-3xl h-200"
                   style={{ 
                         backgroundImage: `url(${Subject})`,
-                        backgroundPosition: '70% 25px',
+                        backgroundPosition: '80% 25px',
                         backgroundSize: '25%',
                         }}>
                         
@@ -33,13 +33,13 @@ const HomePage = () => {
 
                               <div className='grid-cols-1'>
 
-                                    <hr className='w-[20%] mx-auto mt-20'/>
+                                    <hr className='w-[20%] mx-auto mt-15'/>
 
                                     <h1 className="text-6xl font-bold text-center mt-10">
                                           I'm Sean
                                     </h1>
 
-                                    <h1 className="text-5xl font-bold text-center m-1 p-2">
+                                    <h1 className="m-1 p-2">
                                     </h1>
                                     
                                     <p className="text-2xl mt-2 font-semibold text-center">
@@ -87,77 +87,109 @@ const HomePage = () => {
 
                               </div>
 
+                        </div>
 
-                              <div className='grid-cols-2 justify-center items-center mt-10'>
-                                    <h2 className='text-2xl font-semibold text-center mt-20'> Languages and Frameworks </h2>
+                        <div className='flex justify-center animate-bounce mt-5'> 
+                              <IoIosArrowDown size="3em" className='text-gray-600'/>
+                        </div>
+
+                  </div>
+
+
+
+                  <div className='bg-[#2d2d30] text-zinc-300 pt-4 shadow-lg'>
+
+
+                        {/* TECHNICAL SKILLS*/}
+
+                        <div className='m-5'>
+                              <h2 className='text-3xl font-bold'> Techincal Skills </h2>
+
+                              <div className='grid grid-cols-2 gap-4 w-[40%] mx-auto p-4'>
                                     
-                                    <h3 className='text-xl font-semibold text-center mt-2'> JavaScript - React, Node.js, Express, MongoDB </h3>
+                                    <div className=''>
+                                          <h3 className='text-2xl text-center font-semibold'> Languages </h3>
+                                          <ul>
+                                                {codingLanguages.map((language, index) => (
+                                                      <li key={index} className="text-l font-semibold m-1"> - {language}</li>))}
+                                          </ul>
+
+                                    </div>
 
 
+                                    <div className=''>
+                                          <h3 className='text-2xl text-center font-semibold'> Frameworks: </h3>
+                                          <ul>
+                                                {frameWorks.map((framework, index) => (
+                                                      <li key={index} className="text-l font-semibold m-1"> - {framework}</li>))}
+                                          </ul>
+                                    </div>
+                                    
                               </div>
+
+                        </div>
+
+                        {/* ABOUT ME SECTION*/}
+
+                        <div className="p-4 w-[60%] mx-auto">
+                              <h2 className="text-3xl font-bold m-2">About Me </h2>
+
+                              <p>
+                                    I am a passionate software engineer with a background in full-stack development. I enjoy building scalable web applications and exploring new technologies. My expertise includes JavaScript, React, Node.js, and more. I thrive in collaborative environments and am always eager to learn and grow in the tech industry.
+                              </p>
+                              
+                        </div>
+
+                        
+                        {/* MY PROJECTS SECTION */}
+
+                        <div className="p-4 mb-20">
+
+                              <h2 className="text-3xl font-bold">Wanna see my projects? </h2>
+
+                              <hr className='m-5 w-[60%] mx-auto'/>
+
+                              <button
+                              className=''
+                              onClick={() => setCalorieCounterModalOpen(true)}>
+                              
+                                    <img src={calorieCalculatorSS}
+                                    alt="Calorie Calculator Link"
+                                    className="rounded-xl shadow-lg hover:opacity-80 hover:cursor-pointer transition-opacity duration-300 w-[500px] h-auto mx-auto"/>
+
+                              </button>      
 
                         </div>
 
                   </div>
 
+                  <div className='bg-[#1e1e1e] pt-5 pb-10 shadow-lg'>
 
-                  <div className='bg-[#2d2d30] text-zinc-300 p-4 shadow-lg'>
+                        <h2 className='text-center text-3xl font-bold text-zinc-200 p-6'>
+                              Contact Me: 
+                        </h2>
 
-                  <div className='m-5'>
-                        <h2 className='text-3xl font-bold'> Techincal Skills </h2>
+                              <div className='flex justify-center items-center mt-5 gap-10 text-zinc-200'>
+                                    <a href="https://github.com/SeanEArc" target="_blank" rel="noopener noreferrer">
+                                          <FaGithub size="3em" className="hover:text-gray-500 transform hover:scale-110 transition duration-300"/>
+                                    </a>
 
-                        <div className='grid grid-cols-2 gap-4 w-[40%] mx-auto p-4'>
-                              
-                              <div className=''>
-                                    <h3 className='text-2xl text-center font-semibold'> Languages </h3>
-                                    <ul>
-                                          {codingLanguages.map((language, index) => (
-                                                <li key={index} className="text-l font-semibold m-1"> - {language}</li>))}
-                                    </ul>
+                                    <a href="https://www.linkedin.com/in/sean-emmanuel-arcaya/" target="_blank" rel="noopener noreferrer">
+                                          <FaLinkedin size="3em" className='hover:text-gray-500 transform hover:scale-110 transition duration-300' />
+                                    </a> 
 
+                                    <a href="https://www.instagram.com/sean.arcaya/" target="_blank" rel="noopener noreferrer"> 
+                                          <FaInstagram size="3em" className='hover:text-gray-500 transform hover:scale-110 transition duration-300' />
+                                    </a>
+                                    
                               </div>
 
 
-                              <div className=''>
-                                    <h3 className='text-2xl text-center font-semibold'> Frameworks: </h3>
-                                    <ul>
-                                          {frameWorks.map((framework, index) => (
-                                                <li key={index} className="text-l font-semibold m-1"> - {framework}</li>))}
-                                    </ul>
-                              </div>
-                              
-                        </div>
 
                   </div>
 
-                  <div className="p-4 w-[60%] mx-auto">
-                        <h2 className="text-3xl font-bold m-2">About Me </h2>
 
-                        <p>
-                              I am a passionate software engineer with a background in full-stack development. I enjoy building scalable web applications and exploring new technologies. My expertise includes JavaScript, React, Node.js, and more. I thrive in collaborative environments and am always eager to learn and grow in the tech industry.
-                        </p>
-                        
-                  </div>
-            
-                  <div className="p-4 mb-20">
 
-                        <h2 className="text-3xl font-bold">Wanna see my projects? </h2>
-
-                        <hr className='m-5 w-[60%] mx-auto'/>
-
-                        <button
-                        className=''
-                        onClick={() => setCalorieCounterModalOpen(true)}>
-                        
-                              <img src={calorieCalculatorSS}
-                              alt="Calorie Calculator Link"
-                              className="rounded-xl shadow-lg hover:opacity-80 hover:cursor-pointer transition-opacity duration-300 w-[500px] h-auto mx-auto"/>
-
-                        </button>      
-
-                  </div>
-
-                  </div>
 
                   {CalorieCounterModalOpen && <CalorieCounterModal onClose={() => setCalorieCounterModalOpen(false)} />}
 

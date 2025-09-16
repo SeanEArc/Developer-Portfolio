@@ -15,7 +15,7 @@ const Navbar = () => {
 
 
                               {hamburgerOpen && (
-                              <div className="grid grid-cols-1 md:grid-cols-5 gap-4 p-4">
+                              <div className="grid grid-cols-1 md:grid-cols-5 gap-2 pt-4 pr-2">
                                     <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2"> 
                                           Home
                                     </p>

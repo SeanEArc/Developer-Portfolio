@@ -1,6 +1,6 @@
 import professionalPhoto from '../assets/Professional-Photo.jpeg';
 import calorieCalculatorSS from '../assets/CalorieCalculatorScreenshot.png';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import CalorieCounterModal from './CalorieCounterModal';
 import Subject from '../assets/Subject.png';
 import { IoMdArrowRoundForward, IoIosArrowDown } from "react-icons/io";
@@ -17,6 +17,12 @@ const HomePage = () => {
 
       const [CalorieCounterModalOpen, setCalorieCounterModalOpen] = useState(false);
 
+      const [visable, setVisable] = useState(false);
+
+      useEffect(() => {
+            setVisable(true);
+      }, []);
+
 
       return (
 
@@ -29,7 +35,8 @@ const HomePage = () => {
                         backgroundSize: '26%',
                         }}>
                         
-                        <div className="grid grid-cols-[60%_40%] w-full font-bold text-white">
+                        <div className={`grid grid-cols-[60%_40%] w-full font-bold text-white transition-opacity duration-2500 ease-in 
+                              ${visable ? 'opaciity-100' : 'opacity-0'} `}>
 
                               <div className='grid-cols-1'>
 

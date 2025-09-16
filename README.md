@@ -1,5 +1,5 @@
 # My Developer Portfolio - In Progress
-This is the repository for my portfolio so you can see what I am working on currently. 
+This is the repository for my portfolio so you can see what I am working on currently. Once it is finished, I will paste the link below:
 
 ---
 

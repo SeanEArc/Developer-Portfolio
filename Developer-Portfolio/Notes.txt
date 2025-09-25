@@ -1,3 +1,6 @@
 Main application color is  bg-blue-900
 
-Dark Mode
+Dark Mode:
+
+bg-[#2d2d30] - Grey
+bg-[#1e1e1e] - BLACK

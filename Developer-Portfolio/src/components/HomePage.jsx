@@ -7,12 +7,13 @@ import { IoMdArrowRoundForward, IoIosArrowDown } from "react-icons/io";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import {CSS_Logo, React_Logo,JavaScript_Logo,Java_Logo,Python_Logo} from '../assets/codingLanguageIMG/logos.js'
+import AboutMe from './AboutMe.jsx';
+import TechnicalSkills from './TechnicalSkills.jsx';
 
 
 const HomePage = () => {
 
-      const codingLanguages = ["Python", "Java", "JavaScript", "HTML", "CSS"];
-      const frameWorks = ["React", "TailwindCSS", "Spring/Spring Boot", "HTML", "CSS"];
+
       const codingLanguagesIMG = [CSS_Logo,JavaScript_Logo,Java_Logo,Python_Logo, React_Logo];
 
       const [CalorieCounterModalOpen, setCalorieCounterModalOpen] = useState(false);
@@ -30,6 +31,7 @@ const HomePage = () => {
             }, 4000);
             return () => clearInterval(interval)
       }, []);
+      
 
 
       return (
@@ -124,43 +126,12 @@ const HomePage = () => {
 
                         {/* TECHNICAL SKILLS*/}
 
-                        <div className='m-5'>
-                              <h2 className='text-3xl font-bold'> Techincal Skills </h2>
-
-                              <div className='grid grid-cols-2 gap-4 w-[40%] mx-auto p-4'>
-                                    
-                                    <div className=''>
-                                          <h3 className='text-2xl text-center font-semibold'> Languages </h3>
-                                          <ul>
-                                                {codingLanguages.map((language, index) => (
-                                                      <li key={index} className="text-l font-semibold m-1"> - {language}</li>))}
-                                          </ul>
-
-                                    </div>
+                        <TechnicalSkills />
 
 
-                                    <div className=''>
-                                          <h3 className='text-2xl text-center font-semibold'> Frameworks: </h3>
-                                          <ul>
-                                                {frameWorks.map((framework, index) => (
-                                                      <li key={index} className="text-l font-semibold m-1"> - {framework}</li>))}
-                                          </ul>
-                                    </div>
-                                    
-                              </div>
+                        
+                        <AboutMe />
 
-                        </div>
-
-                        {/* ABOUT ME SECTION*/}
-
-                        <div className="p-4 w-[60%] mx-auto">
-                              <h2 className="text-3xl font-bold m-2"> About Me </h2>
-
-                              <p>
-                                    I am a passionate software engineer with a background in full-stack development. I enjoy building scalable web applications and exploring new technologies. My expertise includes JavaScript, React, Node.js, and more. I thrive in collaborative environments and am always eager to learn and grow in the tech industry.
-                              </p>
-                              
-                        </div>
 
                         
                         {/* MY PROJECTS SECTION */}

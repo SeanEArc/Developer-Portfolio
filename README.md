@@ -7,6 +7,7 @@ This is the repository for my portfolio so you can see what I am working on curr
 
 **Frontend**:  
 - JavaScript
+- HTML
 - ReactJS
 - Tailwind CSS
 
@@ -14,7 +15,7 @@ This is the repository for my portfolio so you can see what I am working on curr
 - Java
 - Python
 - C++ *In Progress of Learning*
-- Spring Boot  
+- Spring Boot
 
 **Database**:  
 - PostgreSQL

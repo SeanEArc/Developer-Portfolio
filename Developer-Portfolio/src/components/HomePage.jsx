@@ -6,21 +6,29 @@ import Subject from '../assets/Subject.png';
 import { IoMdArrowRoundForward, IoIosArrowDown } from "react-icons/io";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
-
-
+import {CSS_Logo, React_Logo,JavaScript_Logo,Java_Logo,Python_Logo} from '../assets/codingLanguageIMG/logos.js'
 
 
 const HomePage = () => {
 
       const codingLanguages = ["Python", "Java", "JavaScript", "HTML", "CSS"];
       const frameWorks = ["React", "TailwindCSS", "Spring/Spring Boot", "HTML", "CSS"];
+      const codingLanguagesIMG = [CSS_Logo,JavaScript_Logo,Java_Logo,Python_Logo, React_Logo];
 
       const [CalorieCounterModalOpen, setCalorieCounterModalOpen] = useState(false);
 
       const [visable, setVisable] = useState(false);
+      const [index, setIndex] = useState(0)
 
       useEffect(() => {
             setVisable(true);
+      }, []);
+
+      useEffect(() => {
+            const interval = setInterval(() => {
+                  setIndex((prev) => (prev + 1) % codingLanguagesIMG.length);
+            }, 4000);
+            return () => clearInterval(interval)
       }, []);
 
 
@@ -28,23 +36,30 @@ const HomePage = () => {
 
             <div className='bg-[#2d2d30]'>
                   
-                  <div className="bg-[#1e1e1e] bg-no-repeat bg-contain bg-center text-neutral-200 shadow-3xl h-210"
+                  <div className={`bg-[#1e1e1e] bg-no-repeat bg-contain bg-center text-neutral-200 shadow-3xl h-210`}
                   style={{ 
                         backgroundImage: `url(${Subject})`,
                         backgroundPosition: '87% 25px',
                         backgroundSize: '26%',
                         }}>
                         
-                        <div className={`grid grid-cols-[60%_40%] w-full font-bold text-white transition-opacity duration-2500 ease-in 
-                              ${visable ? 'opaciity-100' : 'opacity-0'} `}>
+                        <div className={`grid grid-cols-[60%_40%] w-full font-bold text-white  `}>
 
-                              <div className='grid-cols-1'>
+                              <div className={`grid-cols-1 transition-opacity duration-2500 ease-in 
+                              ${visable ? 'opacity-100' : 'opacity-0'}`}>
 
                                     <hr className='w-[20%] mx-auto mt-15'/>
 
-                                    <h1 className="text-6xl font-bold text-center mt-10">
-                                          I'm Sean
-                                    </h1>
+                                    <div className='flex items-center justify-center mt-10 ml-10'>
+
+                                          <h1 className="text-6xl font-bold text-center">
+                                                I'm Sean
+                                          </h1>
+
+                                          <img
+                                          src= {codingLanguagesIMG[index]}
+                                          className='max-h-30 max-w-30 pl-5'/>
+                                    </div>
 
                                     <h1 className="m-1 p-2">
                                     </h1>
@@ -53,7 +68,7 @@ const HomePage = () => {
                                           Software Engineer | Full Stack Developer | Tech Enthusiast
                                     </p>
 
-                                    <div className="grid grid-cols-2 gap-10 mx-auto p-4 mr-20 ml-10">
+                                    <div className="grid grid-cols-2 gap-10 mx-auto pl-4 pr-4 mr-20 ml-10">
 
                                           <div className ="grid-cols-1">
                                                 <h2 className='text-xl mt-35'> About Me! </h2>

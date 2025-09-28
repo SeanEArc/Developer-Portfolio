@@ -18,9 +18,15 @@ const HomePage = () => {
       const codingLanguagesIMG = [CSS_Logo,JavaScript_Logo,Java_Logo,Python_Logo, React_Logo];
 
       const [CalorieCounterModalOpen, setCalorieCounterModalOpen] = useState(false);
+      const targetRef = useRef(null);
 
       const [visable, setVisable] = useState(false);
       const [index, setIndex] = useState(0)
+
+      const scrollToSection = () => {
+            targetRef.current?.scrollIntoView({ behavior: 'smooth' });
+
+      };
       
 
       useEffect(() => {
@@ -115,15 +121,17 @@ const HomePage = () => {
 
                         </div>
 
-                        <div className='flex justify-center animate-bounce mt-10'> 
-                              <IoIosArrowDown size="3em" className='text-gray-600'/>
+                        <div onClick={scrollToSection} 
+                        className='flex justify-center animate-bounce mt-10'> 
+                              <IoIosArrowDown size="3em" className='text-gray-600 hover:cursor-pointer hover:scale-105'/>
                         </div>
 
                   </div>
 
                   <hr className='w-full shadow-2xl'/>
 
-                  <div className='bg-[#2d2d30] text-zinc-300 pt-4'>
+                  <div ref={targetRef} 
+                  className='bg-[#2d2d30] text-zinc-300 pt-4'>
 
 
                         {/* TECHNICAL SKILLS*/}

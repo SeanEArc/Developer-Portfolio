@@ -1,12 +1,18 @@
 import {CSS_Logo, React_Logo,JavaScript_Logo,Java_Logo,Python_Logo} from '../assets/codingLanguageIMG/logos.js'
 
+import { useState } from 'react';
+import JavaScriptModal from './modals/JavaScriptModal.jsx';
+
 
 const TechnicalSkills = () => {
 
+      const [javaScriptModalOpen, setJavaScriptModalOpen] = useState(false);
 
       const codingLanguages = ["Python", "Java", "JavaScript", "HTML", "CSS"];
       const codingLanguagesIMG = [CSS_Logo,JavaScript_Logo,Java_Logo,Python_Logo, React_Logo];
       const frameWorks = ["React", "TailwindCSS", "Spring/Spring Boot", "HTML", "CSS"];
+
+      const buttonStyling = 'bg-[#1e1e1e] rounded-xl shadow-lg p-4 hover:scale-105 hover:cursor-pointer transition-transform duration-300'
 
       return(
 
@@ -18,14 +24,16 @@ const TechnicalSkills = () => {
                         
                         {/* LANGUAGES */}
 
-                        <div className='bg-[#1e1e1e] rounded-xl shadow-lg p-4'>
+                        <button onClick={() => setJavaScriptModalOpen(true)}
+                              className={buttonStyling}>
 
                               <h3 className='text-2xl text-center font-semibold mb-2'> JavaScript </h3>
 
                               <img src={JavaScript_Logo}
                               className='max-h-45 mx-auto mb-2'/>
 
-                        </div>
+                        </button>
+
 
 
                         <div className='bg-[#1e1e1e] rounded-xl shadow-lg p-4'>
@@ -50,6 +58,8 @@ const TechnicalSkills = () => {
                         </div>                        
                         
                   </div>
+
+                  {javaScriptModalOpen && <JavaScriptModal onClose={() => setJavaScriptModalOpen(false)}/>}
 
             </div>
       )

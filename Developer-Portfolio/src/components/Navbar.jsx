@@ -1,5 +1,6 @@
 import { GiHamburger } from "react-icons/gi";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -13,23 +14,23 @@ const Navbar = () => {
                         
                         <div> 
 
-
                               {hamburgerOpen && (
-                              <div className="grid grid-cols-1 md:grid-cols-5 gap-2 pt-4 pr-2">
-                                    <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2"> 
-                                          Home
-                                    </p>
+                              <div className="grid grid-cols-1 md:grid-cols-4 gap-2 pt-4 pr-2">
+                                    <Link to="/">
+                                          <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2 hover:scale-110
+                                          "> 
+                                                Home
+                                          </p>
+                                    </Link>
 
-                                    <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2"> 
-                                          About Me
-                                    </p>
+                                    <Link to="/aboutme">
+                                          <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2 hover:scale-110"> 
+                                                About Me
+                                          </p>
+                                    </Link>
 
                                     <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2"> 
                                           My Career
-                                    </p>
-
-                                    <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2"> 
-                                          Resume
                                     </p>
 
                                     <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2"> 
@@ -38,7 +39,6 @@ const Navbar = () => {
 
                               </div>)}
                         </div>
-
 
                         <button
                         className="p-2 mt-2 mr-4 rounded-full transition-colors duration-300 hover:text-gray-400 hover:cursor-pointer"

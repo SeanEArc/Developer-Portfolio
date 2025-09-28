@@ -9,6 +9,7 @@ import { FaInstagram } from "react-icons/fa6";
 import {CSS_Logo, React_Logo,JavaScript_Logo,Java_Logo,Python_Logo} from '../assets/codingLanguageIMG/logos.js'
 import AboutMe from './AboutMe.jsx';
 import TechnicalSkills from './TechnicalSkills.jsx';
+import MyCareer from './MyCareer.jsx';
 
 
 const HomePage = () => {
@@ -20,6 +21,7 @@ const HomePage = () => {
 
       const [visable, setVisable] = useState(false);
       const [index, setIndex] = useState(0)
+      
 
       useEffect(() => {
             setVisable(true);
@@ -180,6 +182,8 @@ const HomePage = () => {
 
 
                   </div>
+
+                  <MyCareer />
 
 
 

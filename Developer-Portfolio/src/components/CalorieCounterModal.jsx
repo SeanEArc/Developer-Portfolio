@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import calorieCalculatorSS from '../assets/CalorieCalculatorScreenshot.png';
 import { MdExitToApp } from "react-icons/md";
 

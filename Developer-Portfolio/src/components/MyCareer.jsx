@@ -12,7 +12,7 @@ const MyCareer = () => {
 
       return (
             <div className="m-5">
-                  <h1 className="text-3xl font-bold mb-4">My Career</h1>
+                  <h1 className="text-3xl font-bold mb-4 text-zinc-300">My Career</h1>
 
                         <VerticalTimeline>
                         {timelineElements.map((element) => {
@@ -37,6 +37,9 @@ const MyCareer = () => {
                         );
                         })}
                   </VerticalTimeline>
+
+
+                  
             </div>
       );
 };

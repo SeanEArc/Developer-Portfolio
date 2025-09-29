@@ -36,7 +36,7 @@ const HomePage = () => {
       useEffect(() => {
             const interval = setInterval(() => {
                   setIndex((prev) => (prev + 1) % codingLanguagesIMG.length);
-            }, 4000);
+            }, 3000);
             return () => clearInterval(interval)
       }, []);
       
@@ -55,7 +55,7 @@ const HomePage = () => {
                         
                         <div className={`grid grid-cols-[60%_40%] w-full font-bold text-white  `}>
 
-                              <div className={`grid-cols-1 transition-opacity duration-2500 ease-in 
+                              <div className={`grid-cols-1 transition-opacity duration-1500 ease-in 
                               ${visable ? 'opacity-100' : 'opacity-0'}`}>
 
                                     <hr className='w-[20%] mx-auto mt-15'/>
@@ -93,7 +93,7 @@ const HomePage = () => {
                                                 
                                                 <h2 className='text-xl mt-35'> My Work </h2>
                                                 <p className='text-lg font-light mt-2'>
-                                                      I've worked in various industries, including retail, food service, real estate, health care, and brokerage. My experience has taught me the importance of adaptability and continuous learning. I enjoy using technology to solve real-world problems and improve user experiences.
+                                                      I've worked in various industries, including retail, food service, real estate, health care, and brokerage. My experience has taught me the importance of adaptability and the ability to continuously learn. I enjoy using technology to solve real-world problems and create fun projects.
                                                       <a className='ml-2 inline-flex items-center hover:underline'> Learn More <IoMdArrowRoundForward /> </a>
                                                 </p>
 
@@ -137,11 +137,6 @@ const HomePage = () => {
                         {/* TECHNICAL SKILLS*/}
 
                         <TechnicalSkills />
-
-
-                        
-                        <AboutMe />
-
 
                         
                         {/* MY PROJECTS SECTION */}
@@ -190,9 +185,6 @@ const HomePage = () => {
 
 
                   </div>
-
-                  <MyCareer />
-
 
 
 

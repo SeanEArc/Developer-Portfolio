@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react';
 import calorieCalculatorSS from '../assets/CalorieCalculatorScreenshot.png';
-import { BsFullscreenExit } from "react-icons/bs";
 import { MdExitToApp } from "react-icons/md";
 
 

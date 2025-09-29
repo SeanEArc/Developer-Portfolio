@@ -47,7 +47,7 @@ const timelineElements = [
             title: "Aquired Real Estate License - 1st Choice Real Estate School",
             location: "Remote",
             description: `Studied and aquired all hours required to aquire my Real Estate License.`,
-            date: "Aug 2020 – May 2022",
+            date: "Aug 2020 – May 2021",
             icon: "school"
       },      
       {

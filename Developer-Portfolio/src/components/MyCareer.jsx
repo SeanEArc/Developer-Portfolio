@@ -1,8 +1,5 @@
 import timelineElements from "./timelineElements";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { FaBriefcase, FaSchool } from "react-icons/fa";
 
@@ -11,10 +8,13 @@ const MyCareer = () => {
       const schoolIconStyles = { background: "#f9c74f" };
 
       return (
-            <div className="m-5">
-                  <h1 className="text-3xl font-bold mb-4 text-zinc-300">My Career</h1>
+            <div className=" ">
+                  <h1 className="text-4xl font-bold pb-4 text-zinc-300">My Career</h1>
 
-                        <VerticalTimeline>
+                  <hr className="max-w-[65%] mx-auto text-zinc-200"/>
+
+                  <VerticalTimeline>
+
                         {timelineElements.map((element) => {
                         const isWorkIcon = element.icon === "work";
 
@@ -22,7 +22,7 @@ const MyCareer = () => {
                               <VerticalTimelineElement
                                     key={element.id}
                                     date={element.date}
-                                    dateClassName="date"
+                                    dateClassName="my-date text-zinc-300"
                                     iconStyle={isWorkIcon ? workIconStyles : schoolIconStyles}
                                     icon={isWorkIcon ? <FaBriefcase /> : <FaSchool />}
                                     >

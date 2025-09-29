@@ -15,7 +15,7 @@ const Navbar = () => {
                         <div> 
 
                               {hamburgerOpen && (
-                              <div className="grid grid-cols-1 md:grid-cols-4 gap-2 pt-4 pr-2">
+                              <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pt-4 pr-2">
                                     <Link to="/">
                                           <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2 hover:scale-110
                                           "> 
@@ -29,13 +29,15 @@ const Navbar = () => {
                                           </p>
                                     </Link>
 
-                                    <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2"> 
-                                          My Career
-                                    </p>
+                                    <Link to="/aboutme#mycareer">
+                                          <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2 hover:scale-110"> 
+                                                My Career
+                                          </p>
+                                    </Link>
 
-                                    <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2"> 
-                                          Socials + Contact
-                                    </p>
+                                    <Link to="/#contactme" className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2 hover:scale-110"> 
+                                          Contact Me
+                                    </Link>
 
                               </div>)}
                         </div>

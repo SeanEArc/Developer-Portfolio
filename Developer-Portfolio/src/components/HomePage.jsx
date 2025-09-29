@@ -1,4 +1,3 @@
-import professionalPhoto from '../assets/Professional-Photo.jpeg';
 import calorieCalculatorSS from '../assets/CalorieCalculatorScreenshot.png';
 import { useState, useRef, useEffect } from 'react';
 import CalorieCounterModal from './CalorieCounterModal';
@@ -7,9 +6,9 @@ import { IoMdArrowRoundForward, IoIosArrowDown } from "react-icons/io";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import {CSS_Logo, React_Logo,JavaScript_Logo,Java_Logo,Python_Logo} from '../assets/codingLanguageIMG/logos.js'
-import AboutMe from './AboutMe.jsx';
 import TechnicalSkills from './TechnicalSkills.jsx';
-import MyCareer from './MyCareer.jsx';
+import ContactMe from './ContactMe.jsx';
+import { Link, useLocation } from 'react-router';
 
 
 const HomePage = () => {
@@ -27,6 +26,9 @@ const HomePage = () => {
             targetRef.current?.scrollIntoView({ behavior: 'smooth' });
 
       };
+
+      const location = useLocation();
+
       
 
       useEffect(() => {
@@ -39,7 +41,14 @@ const HomePage = () => {
             }, 3000);
             return () => clearInterval(interval)
       }, []);
-      
+
+      useEffect(() => {
+      if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+            setTimeout(() => {element.scrollIntoView({ behavior: 'smooth' })
+      }, 25);}
+      }}, [location]);
 
 
       return (
@@ -55,7 +64,7 @@ const HomePage = () => {
                         
                         <div className={`grid grid-cols-[60%_40%] w-full font-bold text-white  `}>
 
-                              <div className={`grid-cols-1 transition-opacity duration-1500 ease-in 
+                              <div className={`grid-cols-1 transition-opacity duration-1000 ease-in 
                               ${visable ? 'opacity-100' : 'opacity-0'}`}>
 
                                     <hr className='w-[20%] mx-auto mt-15'/>
@@ -84,7 +93,7 @@ const HomePage = () => {
                                                 <h2 className='text-xl mt-35'> About Me! </h2>
                                                 <p className='text-lg font-light mt-2'>
                                                       I am a software engineer with a background in full-stack development. I enjoy building web applications, exploring new technologies, and applying my learning. I've learned various languages through LaunchCode, CS courses, and college. I thrive in collaborative environments and am always eager to learn and grow in the tech industry.
-                                                      <a className='ml-2 inline-flex items-center hover:underline hover:cursor-pointer'> Learn More <IoMdArrowRoundForward /> </a>
+                                                      <Link to="/aboutme" className='ml-2 inline-flex items-center hover:underline hover:cursor-pointer'> Learn More <IoMdArrowRoundForward /> </Link>
                                                 </p>
 
                                           </div>
@@ -94,7 +103,7 @@ const HomePage = () => {
                                                 <h2 className='text-xl mt-35'> My Work </h2>
                                                 <p className='text-lg font-light mt-2'>
                                                       I've worked in various industries, including retail, food service, real estate, health care, and brokerage. My experience has taught me the importance of adaptability and the ability to continuously learn. I enjoy using technology to solve real-world problems and create fun projects.
-                                                      <a className='ml-2 inline-flex items-center hover:underline'> Learn More <IoMdArrowRoundForward /> </a>
+                                                      <Link to='/aboutme#mycareer' className='ml-2 inline-flex items-center hover:underline'> Learn More <IoMdArrowRoundForward /> </Link>
                                                 </p>
 
                                           </div>
@@ -143,12 +152,12 @@ const HomePage = () => {
 
                         <div className="p-4 mb-20">
 
-                              <h2 className="text-3xl font-bold">Wanna see my projects? </h2>
+                              <h2 className="text-3xl font-bold pt-3 mt-3">Wanna see my projects? </h2>
 
                               <hr className='m-5 w-[60%] mx-auto'/>
 
                               <button
-                              className=''
+                              className='mt-5'
                               onClick={() => setCalorieCounterModalOpen(true)}>
                               
                                     <img src={calorieCalculatorSS}
@@ -161,29 +170,9 @@ const HomePage = () => {
 
                   </div>
 
-                  <div className='bg-[#1e1e1e] pt-5 pb-10 shadow-lg'>
 
-                        <h2 className='text-center text-3xl font-bold text-zinc-200 p-6'>
-                              Contact Me: 
-                        </h2>
-
-                              <div className='flex justify-center items-center mt-5 gap-10 text-zinc-200'>
-                                    <a href="https://github.com/SeanEArc" target="_blank" rel="noopener noreferrer">
-                                          <FaGithub size="3em" className="hover:text-gray-500 transform hover:scale-110 transition duration-300"/>
-                                    </a>
-
-                                    <a href="https://www.linkedin.com/in/sean-emmanuel-arcaya/" target="_blank" rel="noopener noreferrer">
-                                          <FaLinkedin size="3em" className='hover:text-gray-500 transform hover:scale-110 transition duration-300' />
-                                    </a> 
-
-                                    <a href="https://www.instagram.com/sean.arcaya/" target="_blank" rel="noopener noreferrer"> 
-                                          <FaInstagram size="3em" className='hover:text-gray-500 transform hover:scale-110 transition duration-300' />
-                                    </a>
-                                    
-                              </div>
-
-
-
+                  <div id="contactme">
+                        <ContactMe/>
                   </div>
 
 

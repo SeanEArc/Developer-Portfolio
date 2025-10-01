@@ -10,37 +10,20 @@ const CalorieCounterModal = ({ onClose }) => {
     };
 
     return (
-        <div
-            ref={modalRef}
-            onClick={closeModal}
-            className="flex fixed inset-0 backdrop-blur-sm items-center justify-center z-50"
-        >
+        <div ref={modalRef} onClick={closeModal} className="flex fixed inset-0 backdrop-blur-sm items-center justify-center z-50">
             <div className="bg-[#252526] p-6 rounded-lg shadow-xl w-[60%] border border-black text-zinc-100">
                 <div className="relative">
-                    <button
-                        className="absolute right-2 text-gray-600 hover:text-black hover:cursor-pointer"
-                        onClick={onClose}
-                    >
+                    <button className="absolute right-2 text-gray-600 hover:text-black hover:cursor-pointer" onClick={onClose}>
                         <MdExitToApp size="2em" />
                     </button>
                 </div>
 
-                <h2 className="text-4xl font-bold mb-4 text-center">
-                    Calorie Tracker Application
-                </h2>
-                <img
-                    src={calorieCalculatorSS}
-                    className="brightness-90 mx-auto rounded-lg shadow-lg w-[80%] h-[50%] object-cover"
-                    alt="Calorie Calculator Screenshot"
-                ></img>
+                <h2 className="text-4xl font-bold mb-4 text-center">Calorie Tracker Application</h2>
+                <img src={calorieCalculatorSS} className="brightness-90 mx-auto rounded-lg shadow-lg w-[80%] h-[50%] object-cover" alt="Calorie Calculator Screenshot"></img>
 
                 <p className="text-lg mt-4 font-semibold text-center">
-                    This is a simple calorie tracker application that allows you
-                    to track your daily food intake. You can add food items
-                    along with their nutritional information. The app will
-                    calculate your total calorie intake and Macro's logged. The
-                    app also contains additional links for further information
-                    on how to calculate your daily caloric intake.
+                    This is a simple calorie tracker application that allows you to track your daily food intake. You can add food items along with their nutritional information. The app will
+                    calculate your total calorie intake and Macro's logged. The app also contains additional links for further information on how to calculate your daily caloric intake.
                 </p>
 
                 <div className="flex justify-center m-2 mx-auto w-[40%] h-15">

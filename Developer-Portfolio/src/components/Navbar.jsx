@@ -21,21 +21,14 @@ const Navbar = () => {
                             </Link>
 
                             <Link to="/aboutme">
-                                <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2 hover:scale-110">
-                                    About Me
-                                </p>
+                                <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2 hover:scale-110">About Me</p>
                             </Link>
 
                             <Link to="/aboutme#mycareer">
-                                <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2 hover:scale-110">
-                                    My Career
-                                </p>
+                                <p className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2 hover:scale-110">My Career</p>
                             </Link>
 
-                            <Link
-                                to="/#contactme"
-                                className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2 hover:scale-110"
-                            >
+                            <Link to="/#contactme" className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2 hover:scale-110">
                                 Contact Me
                             </Link>
                         </div>
@@ -55,5 +48,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-

@@ -10,16 +10,4 @@ import PostGres_Logo from './PostGres_Logo.png';
 import Spring_Logo from './Spring_Logo.png';
 import Postman_Logo from './Postman_Logo.png';
 
-export {
-    CSS_Logo,
-    JavaScript_Logo,
-    Java_Logo,
-    Python_Logo,
-    React_Logo,
-    Tailwind_CSS_Logo,
-    Vite_Logo,
-    MySQL_Logo,
-    PostGres_Logo,
-    Spring_Logo,
-    Postman_Logo,
-};
+export { CSS_Logo, JavaScript_Logo, Java_Logo, Python_Logo, React_Logo, Tailwind_CSS_Logo, Vite_Logo, MySQL_Logo, PostGres_Logo, Spring_Logo, Postman_Logo };

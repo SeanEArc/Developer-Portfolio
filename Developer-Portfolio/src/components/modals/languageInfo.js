@@ -1,15 +1,4 @@
-import {
-    JavaScript_Logo,
-    Java_Logo,
-    Python_Logo,
-    Tailwind_CSS_Logo,
-    React_Logo,
-    Vite_Logo,
-    MySQL_Logo,
-    PostGres_Logo,
-    Spring_Logo,
-    Postman_Logo,
-} from '../../assets/codingLanguageIMG/logos.js';
+import { JavaScript_Logo, Java_Logo, Python_Logo, Tailwind_CSS_Logo, React_Logo, Vite_Logo, MySQL_Logo, PostGres_Logo, Spring_Logo, Postman_Logo } from '../../assets/codingLanguageIMG/logos.js';
 
 const languages = [
     {

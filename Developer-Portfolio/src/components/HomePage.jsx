@@ -87,11 +87,11 @@ const HomePage = () => {
     return (
         <div className="bg-[#2d2d30]">
             <div
-                  className="bg-[#1e1e1e] bg-no-repeat bg-center text-neutral-200 shadow-3xl h-auto md:h-[100%]"
+                  className="bg-[#1e1e1e] bg-no-repeat bg-center text-neutral-200 shadow-3xl h-auto md:h-[100%] xs:rounded-full xs:border-4 xs:border-white"
                   style={{
                         backgroundImage: window.innerWidth >= 768 ? `url(${Subject})` : `url(${ProfessionalPhoto})`,
-                        backgroundPosition: '87% 25px',
-                        backgroundSize: '26%',
+                        backgroundPosition: window.innerWidth >= 768 ? `87% 25px` : `49% 320px`,
+                        backgroundSize: window.innerWidth >= 768 ? '26%' : '35%'
                   }}
             >
                 <div

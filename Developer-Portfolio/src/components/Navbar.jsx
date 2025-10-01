@@ -7,10 +7,10 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="flex justify-end-safe w-full bg-[#1e1e1e] font-bold text-white">
+            <div className="flex md:justify-end-safe sm:justify-end-safe justify-center-safe w-full bg-[#1e1e1e] font-bold text-white">
                 <div>
                     {hamburgerOpen && (
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pt-4 pr-2">
+                        <div className="grid xs:grid-cols-1 sm:grid-cols-4 md:grid-cols-4 md:gap-10 sm:gap-2 pt-4 pr-2">
                             <Link to="/">
                                 <p
                                     className="top-title-link flex-auto w-full text-xl text-center font-bold pt-2 pb-2 hover:scale-110
@@ -55,3 +55,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+

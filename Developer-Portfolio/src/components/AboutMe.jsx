@@ -2,10 +2,10 @@ import Professional_Photo from '../assets/Professional-Photo.jpeg';
 
 const AboutMe = () => {
     return (
-        <div className="pr-4 pl-4 w-[65%] mx-auto">
+        <div className="pr-4 pl-4 md:w-[65%] sm:[90%] mx-auto">
+
             <h2 className="text-4xl font-bold m-2"> About Me </h2>
 
-            <hr className="m-2 w-[75%] mx-auto" />
 
             <div className="grid grid-cols-[60%_40%]">
                 <div>

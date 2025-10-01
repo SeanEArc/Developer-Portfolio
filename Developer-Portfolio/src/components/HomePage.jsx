@@ -15,6 +15,7 @@ import {
 import TechnicalSkills from './TechnicalSkills.jsx';
 import ContactMe from './ContactMe.jsx';
 import { Link, useLocation } from 'react-router';
+import ProfessionalPhoto from '../assets/Professional-Photo.jpeg'
 
 const HomePage = () => {
     const codingLanguagesIMG = [
@@ -86,15 +87,15 @@ const HomePage = () => {
     return (
         <div className="bg-[#2d2d30]">
             <div
-                className={`bg-[#1e1e1e] bg-no-repeat bg-contain bg-center text-neutral-200 shadow-3xl h-210`}
-                style={{
-                    backgroundImage: `url(${Subject})`,
-                    backgroundPosition: '87% 25px',
-                    backgroundSize: '26%',
-                }}
+                  className="bg-[#1e1e1e] bg-no-repeat bg-center text-neutral-200 shadow-3xl h-auto md:h-[100%]"
+                  style={{
+                        backgroundImage: window.innerWidth >= 768 ? `url(${Subject})` : `url(${ProfessionalPhoto})`,
+                        backgroundPosition: '87% 25px',
+                        backgroundSize: '26%',
+                  }}
             >
                 <div
-                    className={`grid grid-cols-[60%_40%] w-full font-bold text-white  `}
+                    className={`grid md:grid-cols-[60%_40%] sm:grid-cols-1 w-full font-bold text-white  `}
                 >
                     <div
                         className={`grid-cols-1 transition-opacity duration-1000 ease-in 
@@ -120,7 +121,8 @@ const HomePage = () => {
                             Enthusiast
                         </p>
 
-                        <div className="grid grid-cols-2 gap-10 mx-auto pl-4 pr-4 mr-20 ml-10">
+                        <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-10 mx-auto pl-4 pr-4 md:mr-20 md:ml-10">
+
                             <div className="grid-cols-1">
                                 <h2 className="text-xl mt-35"> About Me! </h2>
                                 <p className="text-lg font-light mt-2">
@@ -145,7 +147,7 @@ const HomePage = () => {
                             </div>
 
                             <div className="grid-cols-2">
-                                <h2 className="text-xl mt-35"> My Work </h2>
+                                <h2 className="text-xl md:mt-35 sm:mt-5"> My Work </h2>
                                 <p className="text-lg font-light mt-2">
                                     I've worked in various industries, including
                                     retail, food service, real estate, health

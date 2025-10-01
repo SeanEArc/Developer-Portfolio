@@ -17,7 +17,7 @@ const TechnicalSkills = () => {
                 language
             </p>
 
-            <div className="grid grid-cols-3 gap-4 w-[80%] mx-auto p-4">
+            <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-4 w-[80%] mx-auto p-4">
                 {/* LANGUAGE BUTTONS */}
 
                 {languageInfo.map((language, index) => (

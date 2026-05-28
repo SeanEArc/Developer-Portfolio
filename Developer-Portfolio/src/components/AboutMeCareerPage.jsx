@@ -17,13 +17,13 @@ const AboutMeCareerPage = () => {
     }, [location]);
 
     return (
-        <div className="bg-[#1e1e1e] pt-4">
-            <div className="text-zinc-300 pb-5 shadow-md">
+        <div className="bg-bg-surface pt-4">
+            <div className="text-text-primary pb-5 shadow-md">
                 <AboutMe />
-                <hr className="m-5 w-[60%] mx-auto" />
+                <hr className="m-5 w-[60%] mx-auto border-accent/20" />
             </div>
 
-            <div id="mycareer" className="bg-[#2d2d30] pt-10">
+            <div id="mycareer" className="bg-bg-base pt-10">
                 <MyCareer />
             </div>
 

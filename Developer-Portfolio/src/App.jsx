@@ -7,7 +7,7 @@ import AboutMeCareerPage from './components/AboutMeCareerPage';
 
 function App() {
     return (
-        <div className="bg-[#2d2d30]">
+        <div className="bg-bg-base">
             <Navbar />
 
             <Routes>

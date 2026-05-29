@@ -17,6 +17,7 @@ const TechnicalSkills = () => {
     return (
         <div className="mb-5 px-5">
             <h2 className="text-3xl font-bold text-text-primary">Technical Skills</h2>
+            <hr className="m-5 w-[60%] mx-auto border-accent/20" />
             <p className="text-sm text-text-muted">*click to see the languages, frameworks, projects made with the language</p>
 
             <div className="flex flex-wrap gap-2 mt-4 mb-2 items-center justify-center">

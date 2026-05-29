@@ -93,7 +93,7 @@ const HomePage = () => {
 
                         <h1 className="m-1 p-2"></h1>
 
-                        <p className="text-2xl mt-2 font-semibold text-center text-accent">Software Engineer | Full Stack Developer | Tech Enthusiast</p>
+                        <p className="text-2xl mt-2 font-semibold text-center text-accent">Software Engineer | Full Stack Developer</p>
 
                         <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-10 mx-auto pl-4 pr-4 md:mr-20 md:ml-10">
                             <div className="grid-cols-1">
@@ -139,8 +139,8 @@ const HomePage = () => {
                 </div>
 
                 {/* MY PROJECTS SECTION */}
-                <div className={`p-4 mb-20 transition-opacity duration-1500 ease-in ${techSectVisable ? 'opacity-100' : 'opacity-0'}`}>
-                    <h2 className="text-3xl font-bold pt-3 mt-3 text-text-primary">Wanna see my projects?</h2>
+                <div>
+                    <h2 className="text-3xl font-bold pt-3 mt-3 text-text-primary">My Projects</h2>
 
                     <hr className="m-5 w-[60%] mx-auto border-accent/20" />
 

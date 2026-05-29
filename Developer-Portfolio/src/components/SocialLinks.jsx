@@ -9,7 +9,7 @@ const SocialLinks = ({ className = '' }) => (
             <FaGithub size="3em" className={SOCIAL_HOVER} />
         </a>
 
-        <a href="https://www.linkedin.com/in/sean-emmanuel-arcaya/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/seanarcaya/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin size="3em" className={SOCIAL_HOVER} />
         </a>
 

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import languageInfo from './modals/languageInfo.js';
 import LanguageModal from './modals/LanguageModal.jsx';
+import { useInView } from '../hooks/useInView.js';
 
 const TechnicalSkills = () => {
     const [modalIndex, setModalIndex] = useState(null);
     const [activeCategory, setActiveCategory] = useState('All');
+    const [sectionRef, inView] = useInView();
 
     const categories = ['All', ...new Set(languageInfo.map(l => l.category))];
 
@@ -15,12 +17,27 @@ const TechnicalSkills = () => {
         'bg-bg-elevated rounded-xl shadow-lg p-4 border border-bg-elevated hover:border-accent hover:scale-105 hover:cursor-pointer transition-all duration-200';
 
     return (
-        <div id="skills" className="px-5 pt-10 pb-5">
-            <h2 className="text-3xl font-bold text-text-primary">Technical Skills</h2>
-            <hr className="m-5 w-[60%] mx-auto border-accent/20" />
-            <p className="text-sm text-text-muted">*click to see the languages, frameworks, projects made with the language</p>
+        <div ref={sectionRef} id="skills" className="px-5 pt-10 pb-5">
+            <h2
+                className={`text-3xl font-bold text-text-primary ${inView ? 'animate-fade-slide-up' : 'opacity-0'}`}
+            >
+                Technical Skills
+            </h2>
+            <hr
+                className={`m-5 w-[60%] mx-auto border-accent/20 ${inView ? 'animate-fade-slide-up' : 'opacity-0'}`}
+                style={{ animationDelay: '80ms' }}
+            />
+            <p
+                className={`text-sm text-text-muted ${inView ? 'animate-fade-slide-up' : 'opacity-0'}`}
+                style={{ animationDelay: '120ms' }}
+            >
+                *click to see the languages, frameworks, projects made with the language
+            </p>
 
-            <div className="flex flex-wrap gap-2 mt-4 mb-2 items-center justify-center">
+            <div
+                className={`flex flex-wrap gap-2 mt-4 mb-2 items-center justify-center ${inView ? 'animate-fade-slide-up' : 'opacity-0'}`}
+                style={{ animationDelay: '160ms' }}
+            >
                 {categories.map(cat => (
                     <button
                         key={cat}
@@ -39,9 +56,14 @@ const TechnicalSkills = () => {
                 ))}
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 w-[85%] mx-auto p-4">
+            <div key={activeCategory} className="flex flex-wrap justify-center gap-4 w-[85%] mx-auto p-4">
                 {filteredSkills.map((language, index) => (
-                    <button key={language.name} onClick={() => setModalIndex(index)} className={`${buttonStyling} w-70`}>
+                    <button
+                        key={language.name}
+                        onClick={() => setModalIndex(index)}
+                        className={`${buttonStyling} w-70 ${inView ? 'animate-fade-slide-up' : 'opacity-0'}`}
+                        style={{ animationDelay: inView ? `${200 + index * 45}ms` : undefined }}
+                    >
                         <h3 className="text-2xl text-center font-semibold mb-2 text-text-primary">{language.name}</h3>
                         {language.logo ? (
                             <img src={language.logo} alt={language.name + ' Logo'} className="max-h-45 mx-auto mb-2" />

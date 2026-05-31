@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Sean from '../assets/Sean.jpg';
 import Sean4 from '../assets/Sean4.png';
 import Sean3 from '../assets/Sean3.png';
@@ -14,27 +14,63 @@ const depthTransforms = [
     'rotate(0deg) translate(0, 0)',
 ];
 
+// Initial fan transforms — wide spread like holding playing cards
+const fanTransforms = [
+    'rotate(-45deg) translate(-180px, 40px)',
+    'rotate(-15deg) translate(-70px, 10px)',
+    'rotate(15deg) translate(70px, 10px)',
+    'rotate(45deg) translate(180px, 40px)',
+];
+
+// Stagger delays for converging into the stack (front card first)
+const staggerDelays = [60, 100, 120, 160];
+
 const StackedPhotos = () => {
     const [order, setOrder] = useState([0, 1, 2, 3]);
+    const [phase, setPhase] = useState('fan');
+
+    useEffect(() => {
+        // Double-rAF paints the fan state first, then wait 1s before sliding to stacked
+        let timer;
+        const id = requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                timer = setTimeout(() => setPhase('stacked'), 100);
+            });
+        });
+        return () => {
+            cancelAnimationFrame(id);
+            clearTimeout(timer);
+        };
+    }, []);
 
     const bringToFront = (imgIdx) => {
         setOrder(prev => [...prev.filter(i => i !== imgIdx), imgIdx]);
     };
 
+    const isStacked = phase === 'stacked';
+
     return (
-        <div className="relative w-80 h-[28rem]">
+        <div
+            className="relative w-80 h-[28rem]"
+            style={{
+                transform: isStacked ? 'translateX(0)' : 'translateX(30vw)',
+                transition: 'transform 800ms ease-in-out',
+            }}
+        >
             {order.map((imgIdx, depth) => {
                 const isTop = depth === order.length - 1;
                 return (
                     <div
                         key={imgIdx}
                         onClick={() => !isTop && bringToFront(imgIdx)}
-                        className={`absolute inset-0 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-3 hover:scale-105 ${
-                            isTop ? 'cursor-default' : 'cursor-pointer'
-                        }`}
+                        className={`absolute inset-0 rounded-2xl overflow-hidden shadow-lg ${
+                            isStacked ? 'hover:-translate-y-3 hover:scale-105' : ''
+                        } ${isTop ? 'cursor-default' : 'cursor-pointer'}`}
                         style={{
                             zIndex: depth + 1,
-                            transform: depthTransforms[depth],
+                            transform: isStacked ? depthTransforms[depth] : fanTransforms[depth],
+                            transformOrigin: '50% 100%',
+                            transition: `transform 800ms ease-in-out ${staggerDelays[depth]}ms`,
                         }}
                     >
                         <img

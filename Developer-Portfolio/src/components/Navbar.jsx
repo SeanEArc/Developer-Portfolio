@@ -5,7 +5,12 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     const [hamburgerOpen, setHamburgerOpen] = useState(true);
     const [menuVisible, setMenuVisible] = useState(true);
+    const [visible, setVisible] = useState(false);
     const closeTimer = useRef(null);
+
+    useEffect(() => {
+        setVisible(true);
+    }, []);
 
     const navLinkClass =
         'flex-auto w-full text-xl text-center font-bold pt-2 pb-2 hover:text-accent hover:underline hover:scale-110 transition-all duration-200 text-center justify-center items-center';
@@ -41,18 +46,14 @@ const Navbar = () => {
     };
 
     useEffect(() => {
-        return () => {
-            if (closeTimer.current) {
-                clearTimeout(closeTimer.current);
-            }
-        };
+        return () => clearTimeout(closeTimer.current);
     }, []);
 
     return (
         <div
-            className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+            className={`fixed top-0 left-0 right-0 z-50 transition-[colors,opacity] duration-1000 ease-in ${
                 hamburgerOpen ? 'bg-black/20' : 'bg-transparent'
-            }`}
+            } ${visible ? 'opacity-100' : 'opacity-0'}`}
         >
             <div className="flex md:justify-end-safe sm:justify-end-safe justify-center-safe w-full font-bold text-text-primary">
                 <div>

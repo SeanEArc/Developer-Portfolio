@@ -2,6 +2,7 @@ import calorieCalculatorSS from '../assets/CalorieCalculatorScreenshot.png';
 import sparqVOScreenshot from '../assets/MyProjectIMG/SparQVOSS.png';
 import cloudInfraGif from '../assets/MyProjectIMG/TerraformGif.gif';
 import bcxWebsiteGif from '../assets/MyProjectIMG/BCXMSGif2.gif';
+import { useInView } from '../hooks/useInView.js';
 
 
 
@@ -118,64 +119,78 @@ const projects = [
       },
 ];
 
-const ProjectCard = ({ project, index, compact }) => (
-    <div
-        className={`flex flex-col ${compact ? '' : `md:flex-row rounded-xl p-6 gap-8 mb-10 hover:border hover:scale-105 transition-transform duration-300 ease-in-out ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}`}
-    >
-        <div className={`flex flex-col justify-center ${compact ? '' : 'md:w-1/2'}`}>
-            <h3 className="text-2xl font-bold text-text-primary mb-3">{project.title}</h3>
-            <p className="text-text-muted text-base mb-4">{project.description}</p>
+const ProjectCard = ({ project, index, compact }) => {
+    const [cardRef, cardVisible] = useInView();
 
-            <p className="text-text-primary font-semibold mb-2 text-left">Key Features:</p>
-            <ul className="list-disc list-inside text-text-muted text-base mb-4 space-y-1 text-left">
-                {project.features.map((feature) => (
-                    <li key={feature}>{feature}</li>
-                ))}
-            </ul>
+    return (
+        <div
+            ref={cardRef}
+            className={`flex flex-col ${compact ? '' : `md:flex-row rounded-xl p-6 gap-8 mb-10 hover:border hover:scale-105 transition-transform duration-300 ease-in-out ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`} ${cardVisible ? 'animate-fade-slide-up' : 'opacity-0'}`}
+        >
+            <div className={`flex flex-col justify-center ${compact ? '' : 'md:w-1/2'}`}>
+                <h3 className="text-2xl font-bold text-text-primary mb-3">{project.title}</h3>
+                <p className="text-text-muted text-base mb-4">{project.description}</p>
 
-            <p className="text-text-muted text-sm mb-5 text-left">
-                <span className="text-text-primary font-semibold">Technologies: </span>
-                {project.technologies}
-            </p>
-
-            {project.links.length > 0 && (
-                <div className="flex flex-wrap gap-3 items-center justify-center">
-                    {project.links.map((link) => (
-                        <a
-                            key={link.label}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`bg-accent text-white font-semibold rounded px-4 py-2 hover:opacity-90 transition-transform duration-300 ease-in-out border ${link.disableScale ? '' : 'hover:scale-110'}`}
-                        >
-                            {link.label}
-                        </a>
+                <p className="text-text-primary font-semibold mb-2 text-left">Key Features:</p>
+                <ul className="list-disc list-inside text-text-muted text-base mb-4 space-y-1 text-left">
+                    {project.features.map((feature) => (
+                        <li key={feature}>{feature}</li>
                     ))}
+                </ul>
+
+                <p className="text-text-muted text-sm mb-5 text-left">
+                    <span className="text-text-primary font-semibold">Technologies: </span>
+                    {project.technologies}
+                </p>
+
+                {project.links.length > 0 && (
+                    <div className="flex flex-wrap gap-3 items-center justify-center">
+                        {project.links.map((link) => (
+                            <a
+                                key={link.label}
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`bg-accent text-white font-semibold rounded px-4 py-2 hover:opacity-90 transition-transform duration-300 ease-in-out border ${link.disableScale ? '' : 'hover:scale-110'}`}
+                            >
+                                {link.label}
+                            </a>
+                        ))}
+                    </div>
+                )}
+            </div>
+
+            {project.image && (
+                <div className="md:w-1/2 flex items-center justify-center">
+                    <img
+                        src={project.image}
+                        alt={`${project.title} screenshot`}
+                        className="rounded-xl shadow-md w-[75%] h-auto object-cover"
+                    />
                 </div>
             )}
         </div>
-
-        {project.image && (
-            <div className="md:w-1/2 flex items-center justify-center">
-                <img
-                    src={project.image}
-                    alt={`${project.title} screenshot`}
-                    className="rounded-xl shadow-md w-[75%] h-auto object-cover"
-                />
-            </div>
-        )}
-    </div>
-);
+    );
+};
 
 const MyProjects = () => {
+    const [headingRef, headingVisible] = useInView();
     const regularProjects = projects.filter((p) => !p.compact);
     const compactProjects = projects.filter((p) => p.compact);
 
     return (
         <div id="myprojects" className="w-[95%] mx-auto pt-10 pb-6">
-            <h2 className="text-3xl font-bold text-text-primary">My Projects</h2>
+            <h2
+                ref={headingRef}
+                className={`text-3xl font-bold text-text-primary ${headingVisible ? 'animate-fade-slide-up' : 'opacity-0'}`}
+            >
+                My Projects
+            </h2>
 
-            <hr className="m-5 w-[60%] mx-auto border-accent/20" />
+            <hr
+                className={`m-5 w-[60%] mx-auto border-accent/20 ${headingVisible ? 'animate-fade-slide-up' : 'opacity-0'}`}
+                style={{ animationDelay: '100ms' }}
+            />
 
             <div className="mt-6">
                 {regularProjects.map((project, index) => (

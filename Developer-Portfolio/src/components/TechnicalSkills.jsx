@@ -15,7 +15,7 @@ const TechnicalSkills = () => {
         'bg-bg-elevated rounded-xl shadow-lg p-4 border border-bg-elevated hover:border-accent hover:scale-105 hover:cursor-pointer transition-all duration-200';
 
     return (
-        <div className="mb-5 px-5">
+        <div id="skills" className="px-5 pt-10 pb-5">
             <h2 className="text-3xl font-bold text-text-primary">Technical Skills</h2>
             <hr className="m-5 w-[60%] mx-auto border-accent/20" />
             <p className="text-sm text-text-muted">*click to see the languages, frameworks, projects made with the language</p>
@@ -39,9 +39,9 @@ const TechnicalSkills = () => {
                 ))}
             </div>
 
-            <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-4 w-[80%] mx-auto p-4">
+            <div className="flex flex-wrap justify-center gap-4 w-[85%] mx-auto p-4">
                 {filteredSkills.map((language, index) => (
-                    <button key={language.name} onClick={() => setModalIndex(index)} className={buttonStyling}>
+                    <button key={language.name} onClick={() => setModalIndex(index)} className={`${buttonStyling} w-70`}>
                         <h3 className="text-2xl text-center font-semibold mb-2 text-text-primary">{language.name}</h3>
                         {language.logo ? (
                             <img src={language.logo} alt={language.name + ' Logo'} className="max-h-45 mx-auto mb-2" />

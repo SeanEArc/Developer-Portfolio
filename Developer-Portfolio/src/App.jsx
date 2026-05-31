@@ -1,13 +1,12 @@
-import { useState } from 'react';
 import './App.css';
 import HomePage from './components/HomePage';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import AboutMeCareerPage from './components/AboutMeCareerPage';
 
 function App() {
     return (
-        <div className="bg-bg-base">
+        <div className="min-h-screen overflow-x-hidden bg-bg-base">
             <Navbar />
 
             <Routes>

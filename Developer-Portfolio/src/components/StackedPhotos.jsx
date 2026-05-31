@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Sean from '../assets/Sean.jpg';
-import Sean2 from '../assets/Sean2.jpg';
+import Sean4 from '../assets/Sean4.png';
 import Sean3 from '../assets/Sean3.png';
 import Sean5 from '../assets/Sean5.png';
 
-const images = [Sean, Sean2, Sean3, Sean5];
+const images = [Sean, Sean4, Sean3, Sean5];
 
 // Transform per stack depth (0 = furthest back, 3 = front)
 const depthTransforms = [

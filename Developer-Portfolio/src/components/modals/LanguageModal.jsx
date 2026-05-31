@@ -1,13 +1,46 @@
+import { useEffect } from 'react';
 import { useModalClose } from '../../hooks/useModalClose';
 import { RiArrowLeftWideLine, RiArrowRightWideLine } from 'react-icons/ri';
 
 const LanguageModal = ({ onClose, language, onPrev, onNext }) => {
     const { modalRef, closeModal } = useModalClose(onClose);
 
+    useEffect(() => {
+        const handleKeyDown = event => {
+            if (event.altKey || event.ctrlKey || event.metaKey) return;
+
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                onClose();
+                return;
+            }
+
+            if (event.key === 'ArrowLeft' || event.code === 'Numpad4' || event.key === 'a') {
+                event.preventDefault();
+                onPrev();
+            }
+
+            if (event.key === 'ArrowRight' || event.code === 'Numpad6' || event.key === 'd') {
+                event.preventDefault();
+                onNext();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [onClose, onNext, onPrev]);
+
     return (
-        <div ref={modalRef} onClick={closeModal} className="flex fixed inset-0 backdrop-blur-3xl bg-bg-base/70 items-center justify-center z-50">
+        <div
+            ref={modalRef}
+            onClick={closeModal}
+            className="flex fixed inset-0 backdrop-blur-3xl bg-bg-base/70 items-center justify-center z-50"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${language.name} skill details`}
+        >
             <div className="grid grid-cols-[5%_90%_5%] p-6 rounded-lg shadow-xl w-[90%] md:w-[75%] border-black text-text-primary max-h-screen overflow-y-auto">
-                <button onClick={onPrev} className="flex items-center justify-center">
+                <button onClick={onPrev} className="flex items-center justify-center" aria-label="Previous skill">
                     <RiArrowLeftWideLine size="3em" className="cursor-pointer hover:text-accent hover:scale-110 transition-transform duration-200" />
                 </button>
 
@@ -41,7 +74,7 @@ const LanguageModal = ({ onClose, language, onPrev, onNext }) => {
                     </div>
                 </div>
 
-                <button onClick={onNext} className="flex items-center justify-center">
+                <button onClick={onNext} className="flex items-center justify-center" aria-label="Next skill">
                     <RiArrowRightWideLine size="3em" className="cursor-pointer hover:text-accent hover:scale-110 transition-transform duration-200" />
                 </button>
             </div>

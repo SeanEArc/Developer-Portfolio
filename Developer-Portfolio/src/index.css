@@ -8,12 +8,68 @@
     --color-text-muted: #9090a8;
 }
 
+html,
+body,
+#root {
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0;
+    background-color: var(--color-bg-base);
+    overflow-x: hidden;
+}
+
 button:hover {
     border-color: #646cff;
 }
 button:focus,
 button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
+}
+
+@keyframes update-banner-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-33.333%);
+    }
+}
+
+.animate-update-banner {
+    animation: update-banner-scroll 18s linear infinite;
+}
+
+@keyframes nav-slide-open {
+    from {
+        opacity: 0;
+        transform: translateX(2rem) scaleX(0.2);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scaleX(1);
+    }
+}
+
+@keyframes nav-slide-close {
+    from {
+        opacity: 1;
+        transform: translateX(0) scaleX(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(2rem) scaleX(0.2);
+    }
+}
+
+.animate-nav-slide-open {
+    animation: nav-slide-open 260ms ease-out both;
+}
+
+.animate-nav-slide-close {
+    animation: nav-slide-close 260ms ease-in both;
 }
 
 @media (prefers-color-scheme: light) {

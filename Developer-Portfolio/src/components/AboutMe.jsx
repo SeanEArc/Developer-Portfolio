@@ -2,7 +2,19 @@ import Professional_Photo from '../assets/Professional-Photo.jpeg';
 
 const AboutMe = () => {
     return (
-        <div className="pr-4 pl-4 md:w-[65%] sm:[90%] mx-auto">
+        <div className="pr-4 pl-4 pt-25 md:w-[90%] sm:w-[90%] mx-auto">
+            <div className="overflow-hidden rounded-md border border-[#646cff]/40 bg-bg-elevated shadow-md" role="status" aria-label="This page is currently being updated. Please come back again later">
+                <div className="flex w-max animate-update-banner whitespace-nowrap py-3 text-sm font-semibold text-text-primary sm:text-base">
+                    <span className="px-8 text-4xl">This page is currently being updated. Please come back again later</span>
+                    <span className="px-8 text-4xl" aria-hidden="true">
+                        This page is currently being updated. Please come back again later
+                    </span>
+                    <span className="px-8 text-4xl" aria-hidden="true">
+                        This page is currently being updated. Please come back again later
+                    </span>
+                </div>
+            </div>
+
             <h2 className="text-4xl font-bold m-2 text-text-primary">About Me</h2>
 
             <div className="grid grid-cols-[60%_40%]">

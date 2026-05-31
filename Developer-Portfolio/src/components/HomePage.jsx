@@ -1,6 +1,5 @@
-import calorieCalculatorSS from '../assets/CalorieCalculatorScreenshot.png';
+
 import { useState, useRef, useEffect } from 'react';
-import CalorieCounterModal from './CalorieCounterModal';
 import { IoMdArrowRoundForward, IoIosArrowDown } from 'react-icons/io';
 import { CSS_Logo, React_Logo, JavaScript_Logo, Java_Logo, Python_Logo } from '../assets/codingLanguageIMG/logos.js';
 import TechnicalSkills from './TechnicalSkills.jsx';
@@ -8,37 +7,14 @@ import ContactMe from './ContactMe.jsx';
 import SocialLinks from './SocialLinks.jsx';
 import { Link, useLocation } from 'react-router';
 import StackedPhotos from './StackedPhotos';
+import MyProjects from './MyProjects.jsx';
+
+const codingLanguagesIMG = [CSS_Logo, JavaScript_Logo, Java_Logo, Python_Logo, React_Logo];
 
 const HomePage = () => {
-    const codingLanguagesIMG = [CSS_Logo, JavaScript_Logo, Java_Logo, Python_Logo, React_Logo];
-
-    const [CalorieCounterModalOpen, setCalorieCounterModalOpen] = useState(false);
-
     const targetRef = useRef(null);
 
     const [visable, setVisable] = useState(false);
-    const [techSectVisable, setTechSectVisable] = useState(false);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        setTechSectVisable(true);
-                    }
-                });
-            },
-            { threshold: 0.2 }
-        );
-
-        if (targetRef.current) {
-            observer.observe(targetRef.current);
-        }
-        return () => {
-            if (targetRef.current) observer.unobserve(targetRef.current);
-        };
-    }, []);
-
     const [index, setIndex] = useState(0);
 
     const scrollToSection = () => {
@@ -97,7 +73,7 @@ const HomePage = () => {
 
                         <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-10 mx-auto pl-4 pr-4 md:mr-20 md:ml-10">
                             <div className="grid-cols-1">
-                                <h2 className="text-xl mt-8 text-text-primary">About Me!</h2>
+                                <h2 className="text-xl mt-8 text-text-primary">About Me</h2>
                                 <p className="text-lg font-light mt-2 text-text-muted">
                                     I am a software engineer with a background in full-stack development. I enjoy building web applications, exploring new technologies, and applying my learning. I've
                                     learned various languages through LaunchCode, CS courses, and college. I thrive in collaborative environments and am always eager to learn and grow in the tech
@@ -109,9 +85,9 @@ const HomePage = () => {
                             </div>
 
                             <div className="grid-cols-2">
-                                <h2 className="text-xl md:mt-8 sm:mt-5 text-text-primary">My Work</h2>
+                                <h2 className="text-xl md:mt-8 sm:mt-5 text-text-primary">Career</h2>
                                 <p className="text-lg font-light mt-2 text-text-muted">
-                                    I've worked in various industries, including retail, food service, real estate, health care, and brokerage. My experience has taught me the importance of
+                                    I've worked in various industries, including tech, retail, food service, real estate, health care, and brokerage. My experience has taught me the importance of
                                     adaptability and the ability to continuously learn. I enjoy using technology to solve real-world problems and create fun projects.
                                     <Link to="/aboutme#mycareer" className="ml-2 inline-flex items-center text-accent hover:underline">
                                         Learn More <IoMdArrowRoundForward />
@@ -128,37 +104,22 @@ const HomePage = () => {
                 </div>
             </div>
 
-            <div
-                ref={targetRef}
-                className={`bg-gradient-to-tr from-bg-surface via-black to-bg-surface text-text-primary
-                  transition-opacity duration-1000 ease-in overflow-hidden`}
-            >
+            <div ref={targetRef} className="text-text-primary transition-opacity duration-1000 ease-in">
                 {/* TECHNICAL SKILLS */}
-                <div className={`transition-opacity duration-500 ease-in ${techSectVisable ? 'opacity-100' : 'opacity-0'}`}>
+                <div className="bg-gradient-to-bl from-bg-surface via-black to-bg-surface overflow-hidden">
                     <TechnicalSkills />
                 </div>
 
                 {/* MY PROJECTS SECTION */}
-                <div>
-                    <h2 className="text-3xl font-bold pt-3 mt-3 text-text-primary">My Projects</h2>
-
-                    <hr className="m-5 w-[60%] mx-auto border-accent/20" />
-
-                    <button className="mt-5" onClick={() => setCalorieCounterModalOpen(true)}>
-                        <img
-                            src={calorieCalculatorSS}
-                            alt="Calorie Calculator Link"
-                            className="rounded-xl shadow-lg hover:opacity-80 hover:cursor-pointer hover:ring-2 hover:ring-accent transition-all duration-300 w-[500px] h-auto mx-auto"
-                        />
-                    </button>
+                <div className="bg-gradient-to-br from-bg-surface via-black to-bg-surface overflow-hidden">
+                    <MyProjects />
                 </div>
             </div>
 
-            <div id="contactme">
+            <div id="contactme" className="bg-gradient-to-bl from-bg-surface via-black to-bg-surface overflow-hidden">
                 <ContactMe />
             </div>
 
-            {CalorieCounterModalOpen && <CalorieCounterModal onClose={() => setCalorieCounterModalOpen(false)} />}
         </div>
     );
 };

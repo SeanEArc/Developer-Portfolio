@@ -23,7 +23,7 @@ const AboutMe = () => {
                 ref={contentRef}
                 className={`grid grid-cols-1 md:grid-cols-[60%_40%] ${contentVisible ? 'animate-fade-slide-up' : 'opacity-0'}`}
             >
-                <img src={Professional_Photo} alt="Photo of me" className="block md:hidden my-6 mx-auto w-40 border shadow rounded-full" />
+                <img src={Professional_Photo} alt="Photo of me" className="block md:hidden my-6 mx-auto w-40 border-4 border-accent/60 shadow-lg shadow-accent/20 rounded-full" />
                 <div>
                     <h3 className="text-2xl font-semibold uppercase tracking-widest m-2 pt-5 text-text-primary">Summary:</h3>
 
@@ -57,7 +57,7 @@ const AboutMe = () => {
                     </p>
                 </div>
 
-                <img src={Professional_Photo} alt="Photo of me" className="hidden md:block my-auto mx-auto ml-8 md:w-[50%] border shadow rounded-full" />
+                <img src={Professional_Photo} alt="Photo of me" className="hidden md:block my-auto mx-auto md:w-[50%] border-5 border-accent/50 shadow-lg shadow-accent/20 rounded-full" />
             </div>
 
         </div>

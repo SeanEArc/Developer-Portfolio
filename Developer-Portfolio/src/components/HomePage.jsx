@@ -47,11 +47,11 @@ const HomePage = () => {
 
     return (
         <div className="bg-bg-base">
-            <div className="bg-gradient-to-br from-bg-surface via-black to-bg-surface text-text-primary shadow-3xl min-h-screen flex flex-col">
+            <div className="bg-gradient-to-br from-bg-surface via-black to-bg-surface text-text-primary shadow-3xl min-h-screen flex flex-col pt-16 md:pt-0">
                 <div className={`grid md:grid-cols-[30%_70%] sm:grid-cols-1 w-[90%] mx-auto font-bold text-text-primary flex-1 items-center`}>
-                    {/* Left column — stacked profile photos + social links */}
+                    {/* Left column — stacked profile photos + social links (desktop only) */}
                     <div className="hidden md:flex flex-col items-center justify-center relative z-10">
-                        <StackedPhotos className=""/>
+                        <StackedPhotos />
                         <SocialLinks className="mt-10 text-text-primary" />
                     </div>
 
@@ -70,6 +70,14 @@ const HomePage = () => {
                         <h1 className="m-1 p-2"></h1>
 
                         <p className="text-2xl mt-2 font-semibold text-center text-accent">Software Engineer | Full Stack Developer</p>
+
+                        {/* Photos shown inline on mobile only, between subtitle and body text */}
+                        <div className="flex md:hidden flex-col items-center mt-6">
+                            <div className="scale-75 origin-top">
+                                <StackedPhotos />
+                            </div>
+                            <SocialLinks className="mt-4 text-text-primary" />
+                        </div>
 
                         <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-10 mx-auto pl-4 pr-4 md:mr-20 md:ml-10">
                             <div className="grid-cols-1">

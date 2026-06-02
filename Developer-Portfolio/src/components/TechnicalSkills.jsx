@@ -19,12 +19,12 @@ const TechnicalSkills = () => {
     return (
         <div ref={sectionRef} id="skills" className="px-5 pt-10 pb-5">
             <h2
-                className={`text-3xl font-bold text-text-primary ${inView ? 'animate-fade-slide-up' : 'opacity-0'}`}
+                className={`text-3xl font-bold uppercase tracking-widest text-text-primary ${inView ? 'animate-fade-slide-up' : 'opacity-0'}`}
             >
                 Technical Skills
             </h2>
-            <hr
-                className={`m-5 w-[60%] mx-auto border-accent/20 ${inView ? 'animate-fade-slide-up' : 'opacity-0'}`}
+            <div
+                className={`my-5 h-[2px] w-[60%] mx-auto bg-gradient-to-r from-text-muted/10 via-text-muted/35 to-text-muted/10 ${inView ? 'animate-fade-slide-up' : 'opacity-0'}`}
                 style={{ animationDelay: '80ms' }}
             />
             <p

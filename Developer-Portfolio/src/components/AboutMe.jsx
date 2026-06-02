@@ -1,42 +1,65 @@
 import Professional_Photo from '../assets/Professional-Photo.jpeg';
+import { useInView } from '../hooks/useInView.js';
 
 const AboutMe = () => {
+    const [headingRef, headingVisible] = useInView();
+    const [contentRef, contentVisible] = useInView();
+
     return (
-        <div className="pr-4 pl-4 pt-25 md:w-[90%] sm:w-[90%] mx-auto">
-            <div className="overflow-hidden rounded-md border border-[#646cff]/40 bg-bg-elevated shadow-md" role="status" aria-label="This page is currently being updated. Please come back again later">
-                <div className="flex w-max animate-update-banner whitespace-nowrap py-3 text-sm font-semibold text-text-primary sm:text-base">
-                    <span className="px-8 text-4xl">This page is currently being updated. Please come back again later</span>
-                    <span className="px-8 text-4xl" aria-hidden="true">
-                        This page is currently being updated. Please come back again later
-                    </span>
-                    <span className="px-8 text-4xl" aria-hidden="true">
-                        This page is currently being updated. Please come back again later
-                    </span>
-                </div>
-            </div>
+        <div className="w-[85%] mx-auto pt-25 pb-6">
 
-            <h2 className="text-4xl font-bold m-2 text-text-primary">About Me</h2>
+            <h2
+                ref={headingRef}
+                className={`text-3xl font-bold uppercase tracking-widest text-text-primary ${headingVisible ? 'animate-fade-slide-up' : 'opacity-0'}`}
+            >
+                About Me
+            </h2>
+            <div
+                className={`my-5 h-[2px] w-[60%] mx-auto bg-gradient-to-r from-text-muted/10 via-text-muted/35 to-text-muted/10 ${headingVisible ? 'animate-fade-slide-up' : 'opacity-0'}`}
+                style={{ animationDelay: '100ms' }}
+            />
 
-            <div className="grid grid-cols-[60%_40%]">
+            <div
+                ref={contentRef}
+                className={`grid grid-cols-1 md:grid-cols-[60%_40%] ${contentVisible ? 'animate-fade-slide-up' : 'opacity-0'}`}
+            >
+                <img src={Professional_Photo} alt="Photo of me" className="block md:hidden my-6 mx-auto w-40 border shadow rounded-full" />
                 <div>
-                    <h3 className="text-2xl font-semibold m-2 pt-5 text-text-primary">Summary:</h3>
-
-                    <p className="mb-4 text-text-muted">I'm a full-stack developer who acquired my technical skills through college, coding bootcamps, YouTube, and LaunchCode - a nonprofit coding bootcamp.</p>
+                    <h3 className="text-2xl font-semibold uppercase tracking-widest m-2 pt-5 text-text-primary">Summary:</h3>
 
                     <p className="mb-4 text-text-muted">
-                        I enjoy learning new technologies, applying them in real-world scenarios, and building projects that anyone can use. My current full-stack stack includes Java with Spring Boot,
-                        JavaScript with ReactJS and TailwindCSS, and PostgreSQL or MySQL for data persistence.
+                        Hello! My name is Sean Arcaya, and I am a Full-Stack Software Developer with a passion for
+                        building applications that solve real-world problems and create meaningful experiences for
+                        users. My journey into software development began through a combination of college coursework, coding
+                        bootcamps, self-directed learning, and hands-on professional experience. Since then, I have
+                        worked on a variety of projects ranging from web applications and cloud infrastructure to
+                        business automation tools and AI-powered solutions.
+                    </p>
+
+
+                    <p className="mb-4 text-text-muted">
+                        I enjoy working across the entire development lifecycle, from designing responsive user
+                        interfaces with React and Tailwind CSS to building scalable backend services with Java, Spring
+                        Boot, Python, and FastAPI. I also have experience deploying and managing cloud-native
+                        applications using Google Cloud Platform, Docker, CI/CD pipelines, and Terraform.
                     </p>
 
                     <p className="mb-4 text-text-muted">
-                        I thrive in collaborative environments because they give me opportunities to learn more, share ideas, and challenge myself to improve on areas I am not familiar with.
+                        What excites me most about software development is the opportunity to continuously learn, solve
+                        challenging problems, and turn ideas into practical solutions. Whether I am collaborating with a
+                        team, integrating new technologies, or building personal projects, I am always looking for ways
+                        to improve my skills and deliver high-quality software.
+                    </p>
+
+                    <p className="mb-4 text-text-muted">
+                        When I'm not coding, you'll usually find me hiking, working on personal
+                        development projects, playing competitive volleyball, or spending time with my Tuxedo cat, Nix and Olde English Bulldog, Loki.
                     </p>
                 </div>
 
-                <img src={Professional_Photo} alt="Photo of me" className="my-auto mx-auto ml-8 md:w-[50%] sm:10 border shadow rounded-full" />
+                <img src={Professional_Photo} alt="Photo of me" className="hidden md:block my-auto mx-auto ml-8 md:w-[50%] border shadow rounded-full" />
             </div>
 
-            <p className="mb-4 mx-auto w-[80%] text-text-muted">Additionally, I am currently in college to acquire a degree in Software Development and I enjoy playing indoor volleyball in my free time.</p>
         </div>
     );
 };

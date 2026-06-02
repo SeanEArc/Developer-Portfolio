@@ -17,17 +17,16 @@ const AboutMeCareerPage = () => {
     }, [location]);
 
     return (
-        <div className="bg-bg-surface pt-4">
-            <div className="text-text-primary pb-5 shadow-md">
+        <div className="bg-bg-base">
+            <div className="bg-gradient-to-br from-bg-surface via-black to-bg-surface overflow-hidden">
                 <AboutMe />
-                <hr className="m-5 w-[60%] mx-auto border-accent/20" />
             </div>
 
-            <div id="mycareer" className="bg-bg-base pt-10">
+            <div id="mycareer" className="bg-gradient-to-bl from-bg-surface via-black to-bg-surface overflow-hidden">
                 <MyCareer />
             </div>
 
-            <div>
+            <div className="bg-gradient-to-br from-bg-surface via-black to-bg-surface overflow-hidden">
                 <ContactMe />
             </div>
         </div>

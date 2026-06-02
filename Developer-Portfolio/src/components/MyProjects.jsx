@@ -182,13 +182,13 @@ const MyProjects = () => {
         <div id="myprojects" className="w-[95%] mx-auto pt-10 pb-6">
             <h2
                 ref={headingRef}
-                className={`text-3xl font-bold text-text-primary ${headingVisible ? 'animate-fade-slide-up' : 'opacity-0'}`}
+                className={`text-3xl font-bold uppercase tracking-widest text-text-primary ${headingVisible ? 'animate-fade-slide-up' : 'opacity-0'}`}
             >
                 My Projects
             </h2>
 
-            <hr
-                className={`m-5 w-[60%] mx-auto border-accent/20 ${headingVisible ? 'animate-fade-slide-up' : 'opacity-0'}`}
+            <div
+                className={`my-5 h-[2px] w-[60%] mx-auto bg-gradient-to-r from-text-muted/10 via-text-muted/35 to-text-muted/10 ${headingVisible ? 'animate-fade-slide-up' : 'opacity-0'}`}
                 style={{ animationDelay: '100ms' }}
             />
 

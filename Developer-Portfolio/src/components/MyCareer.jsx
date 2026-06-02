@@ -1,6 +1,10 @@
 import timelineElements from './timelineElements';
 
 const CareerCard = ({ element, index }) => {
+    const hasAccomplishments = element.accomplishments?.length > 0;
+    const hasProjects = element.projects?.length > 0;
+    const detailsGridClass = `mt-4 grid gap-6 ${hasAccomplishments && hasProjects ? 'md:grid-cols-2' : ''}`;
+
     return (
         <div
             className={`flex flex-col md:flex-row rounded-xl p-6 gap-8 mb-10 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
@@ -15,35 +19,39 @@ const CareerCard = ({ element, index }) => {
 
                 <p className="text-text-muted text-base whitespace-pre-line">{element.description}</p>
 
-                {element.accomplishments && element.accomplishments.length > 0 && (
-                    <div className="mt-4">
-                        <h4 className="text-sm font-bold uppercase tracking-widest text-text-primary mb-2">
-                            Accomplishments
-                        </h4>
-                        <ul className="space-y-1">
-                            {element.accomplishments.map((item, i) => (
-                                <li key={i} className="flex items-start gap-2 text-text-muted text-sm">
-                                    <span className="text-accent mt-1">▸</span>
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
+                {(hasAccomplishments || hasProjects) && (
+                    <div className={detailsGridClass}>
+                        {hasAccomplishments && (
+                            <div>
+                                <h4 className="relative inline-block pb-2 text-sm font-bold uppercase tracking-widest text-text-primary mb-2 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-gradient-to-r after:from-text-primary/25 after:via-text-primary after:to-text-primary/25">
+                                    Accomplishments
+                                </h4>
+                                <ul className="space-y-1">
+                                    {element.accomplishments.map((item, i) => (
+                                        <li key={i} className="flex items-start gap-2 text-text-muted text-sm">
+                                            <span className="text-accent mt-1">{'>'}</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
 
-                {element.projects && element.projects.length > 0 && (
-                    <div className="mt-4">
-                        <h4 className="text-sm font-bold uppercase tracking-widest text-text-primary mb-2">
-                            Projects
-                        </h4>
-                        <div className="space-y-3">
-                            {element.projects.map((project, i) => (
-                                <div key={i} className="border-l-2 border-accent/40 pl-3">
-                                    <p className="text-text-primary text-sm font-semibold">{project.name}</p>
-                                    <p className="text-text-muted text-sm">{project.description}</p>
+                        {hasProjects && (
+                            <div>
+                                <h4 className="relative inline-block pb-2 text-sm font-bold uppercase tracking-widest text-text-primary mb-2 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-gradient-to-r after:from-text-primary/25 after:via-text-primary after:to-text-primary/25">
+                                    Projects
+                                </h4>
+                                <div className="space-y-3">
+                                    {element.projects.map((project, i) => (
+                                        <div key={i} className="border-l-2 border-accent/40 pl-3">
+                                            <p className="text-text-primary text-sm font-semibold">{project.name}</p>
+                                            <p className="text-text-muted text-sm">{project.description}</p>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
-                        </div>
+                            </div>
+                        )}
                     </div>
                 )}
             </div>

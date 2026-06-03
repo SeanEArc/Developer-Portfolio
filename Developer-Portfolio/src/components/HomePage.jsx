@@ -83,9 +83,8 @@ const HomePage = () => {
                             <div className="grid-cols-1">
                                 <h2 className="text-xl mt-8 text-text-primary">About Me</h2>
                                 <p className="text-lg font-light mt-2 text-text-muted">
-                                    I am a software engineer with a background in full-stack development. I enjoy building web applications, exploring new technologies, and applying my learning. I've
-                                    learned various languages through LaunchCode, CS courses, and college. I thrive in collaborative environments and am always eager to learn and grow in the tech
-                                    industry.
+                                    I’m a full-stack software developer focused on building practical, user-centered applications with React, Tailwind CSS, Java, Spring Boot, Python, FastAPI, and cloud technologies. My background combines knowledge from STLCC, LaunchCode courses, self-directed learning, and hands-on professional experience building web apps, APIs, automation tools, and cloud-based solutions.
+
                                     <Link to="/aboutme" className="ml-2 inline-flex items-center text-accent hover:underline hover:cursor-pointer">
                                         Learn More <IoMdArrowRoundForward />
                                     </Link>
@@ -95,8 +94,7 @@ const HomePage = () => {
                             <div className="grid-cols-2">
                                 <h2 className="text-xl md:mt-8 sm:mt-5 text-text-primary">Career</h2>
                                 <p className="text-lg font-light mt-2 text-text-muted">
-                                    I've worked in various industries, including tech, retail, food service, real estate, health care, and brokerage. My experience has taught me the importance of
-                                    adaptability and the ability to continuously learn. I enjoy using technology to solve real-world problems and create fun projects.
+                                    My career path has taken me through software development, financial services, real estate, health care, hospitality, and customer support. Those experiences shaped how I approach software: with adaptability, clear communication, and a focus on solving real business problems. Today, I build full-stack applications, cloud infrastructure, integrations, and automation tools for production environments.
                                     <Link to="/aboutme#mycareer" className="ml-2 inline-flex items-center text-accent hover:underline">
                                         Learn More <IoMdArrowRoundForward />
                                     </Link>
